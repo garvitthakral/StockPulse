@@ -9,13 +9,13 @@ const Table = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Equity</h1>
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
+    <div className="px-50 mt-26">
+      <h1 className="flex items-center justify-center text-4xl font-semibold pb-14">Equity</h1>
+      <div className="px-10">
+        <table className="shadow-2xl rounded-2xl">
+          <thead className="border-b border-gray-400">
+            <tr className="text-xl">
+              <th className="px-4 py-4">#</th>
               <th>Equity delivery</th>
               <th>Equity intraday</th>
               <th>F&O - Futures</th>
@@ -24,12 +24,12 @@ const Table = () => {
           </thead>
           <tbody>
             {charges.map((item, idx) => (
-              <tr key={idx}>
-                <td>{item.category}</td>
-                <td>{item.equityDelivery}</td>
-                <td>{item.equityIntraday}</td>
-                <td>{item.foFutures}</td>
-                <td>
+              <tr key={idx} className="text-lg font-light">
+                <td className="p-6 font-semibold">{item.category}</td>
+                <td className="p-6">{item.equityDelivery}</td>
+                <td className="p-6">{item.equityIntraday}</td>
+                <td className="p-6">{item.foFutures}</td>
+                <td className="p-6">
                   {typeof item.foOptions === "object"
                     ? Object.entries(item.foOptions).map(([key, value]) => (
                         <div key={key}>
