@@ -28,3 +28,31 @@
 .charge ul{
   list-style-type: disc;
 }
+.padding {
+  padding: 10px 40px 10px 10px;
+  outline: none; 
+}
+ol {
+  list-style-type:decimal; /* Dots as bullet points */
+}
+.part{
+  padding: 20px;
+}
+.part h2{
+  padding-bottom: 20px;
+  font-size: x-large;
+  cursor: pointer;
+}
+.part h2:hover{
+  color: #75b03a;
+}
+.part li{
+  padding: 10px;
+  font-weight: 500;
+  color: #2d6e78;
+  cursor: pointer;
+}
+.part li:hover{
+  color: #75b03a;
+}
+

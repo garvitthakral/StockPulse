@@ -17,7 +17,6 @@ const ChargesOpt = () => {
                 Billing Frquency
               </th>
               <th className="w-4/12 flex items-center justify-between">
-                {" "}
                 Charges
               </th>
             </tr>

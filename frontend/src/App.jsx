@@ -6,6 +6,7 @@ import Navbar from "./landing/Navbar";
 import Footer from "./landing/Footer";
 import About from "./landing/About/About";
 import Pricing from "./landing/Pricing/Pricing";
+import Support from "./landing/Support/Support";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/pricing" element={<Pricing />} />
-        <Route path="/support" element={<Home />} />
+        <Route path="/support" element={<Support />} />
         <Route path="/signin" element={<Home />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
