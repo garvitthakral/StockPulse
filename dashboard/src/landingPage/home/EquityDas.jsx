@@ -25,4 +25,4 @@ const EquityDas = () => {
   )
 }
 
-export default EquityDas
+export default EquityDas;

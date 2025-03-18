@@ -18,9 +18,9 @@ function App() {
         <div className="w-8/12">
           <Routes>
             <Route path="/" element={<HomeDas />} />
-            <Route path="/orders" element={<HomeDas />} />
-            <Route path="/holdings" element={<HomeDas />} />
-            <Route path="/positions" element={<HomeDas />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/holdings" element={<Holdings />} />
+            <Route path="/positions" element={<Positions />} />
             <Route path="/funds" element={<HomeDas />} />
           </Routes>
         </div>

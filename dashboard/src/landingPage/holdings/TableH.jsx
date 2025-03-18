@@ -1,25 +1,57 @@
 import React from "react";
+import { holdings } from "../../data/data";
 
 const TableH = () => {
   return (
     <div className="py-10">
       <h1 className="py-6 text-xl font-semibold text-gray-700">
-        Holdings (13)
+        Holdings ({holdings.length})
       </h1>
       <div>
-        <table className="w-[1080px]">
+        <table className="w-full border-collapse">
           <thead className="border-y border-gray-600">
-            <tr className="flex justify-between py-2">
-              <th className="w-3/12">Instrument</th>
-              <th className="w-1/12">Qty.</th>
-              <th className="w-1/12">Avg. cost</th>
-              <th className="w-2/12">LTP</th>
-              <th className="w-1/12">Cur. val</th>
-              <th className="w-2/12">P&L</th>
-              <th className="w-1/12">Net chg.</th>
-              <th className="w-1/12">Day chg.</th>
+            <tr className="text-gray-700">
+              <th className="px-4 py-2 text-left">Instrument</th>
+              <th className="px-4 py-2 text-right">Qty.</th>
+              <th className="px-4 py-2 text-right">Avg. Cost</th>
+              <th className="px-4 py-2 text-right">LTP</th>
+              <th className="px-4 py-2 text-right">Cur. Val</th>
+              <th className="px-4 py-2 text-right">P&L</th>
+              <th className="px-4 py-2 text-right">Net Chg.</th>
+              <th className="px-4 py-2 text-right">Day Chg.</th>
             </tr>
           </thead>
+          <tbody>
+            {holdings.map((stock, idx) => {
+              const currVal = stock.price * stock.qty;
+              const isProfit = currVal - stock.avg * stock.qty >= 0.0;
+              const profClass = isProfit ? "text-green-500" : "text-red-500";
+              const dayClass = stock.isLoss ? "text-red-500" : "text-green-500";
+
+              return (
+                <tr className="border-b border-gray-600" key={idx}>
+                  <td className="px-4 py-2">{stock.name}</td>
+                  <td className="px-4 py-2 text-right">{stock.qty}</td>
+                  <td className="px-4 py-2 text-right">
+                    {stock.avg.toFixed(2)}
+                  </td>
+                  <td className="px-4 py-2 text-right">
+                    {stock.price.toFixed(2)}
+                  </td>
+                  <td className="px-4 py-2 text-right">{currVal.toFixed(2)}</td>
+                  <td className={`px-4 py-2 text-right ${profClass}`}>
+                    {(currVal - stock.avg * stock.qty).toFixed(2)}
+                  </td>
+                  <td className={`px-4 py-2 text-right ${profClass}`}>
+                    {stock.net}
+                  </td>
+                  <td className={`px-4 py-2 text-right ${dayClass}`}>
+                    {stock.day}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
         </table>
       </div>
     </div>
