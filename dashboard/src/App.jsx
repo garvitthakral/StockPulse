@@ -3,6 +3,9 @@ import NavbarDas from "./landingPage/NavbarDas";
 import SidebarDas from "./landingPage/SidebarDas";
 import { Route, Routes } from "react-router-dom";
 import HomeDas from "./landingPage/home/HomeDas";
+import Orders from "./landingPage/order/Orders";
+import Holdings from "./landingPage/holdings/Holdings";
+import Positions from "./landingPage/positions/Positions";
 
 function App() {
   return (
