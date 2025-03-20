@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { holdings } from "../../data/data";
+import axios from "axios";
 
 const TableH = () => {
+
+  const [allHolding, setAllHolding] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:3002/allHoldings").then((res) => {
+      console.log(res.data);
+      setAllHolding(res.data);
+    })
+  }, []);
+
   return (
     <div className="py-10">
       <h1 className="py-6 text-xl font-semibold text-gray-700">
-        Holdings ({holdings.length})
+        Holdings ({allHolding.length})
       </h1>
       <div>
         <table className="w-full border-collapse">
@@ -22,7 +33,7 @@ const TableH = () => {
             </tr>
           </thead>
           <tbody>
-            {holdings.map((stock, idx) => {
+            {allHolding.map((stock, idx) => {
               const currVal = stock.price * stock.qty;
               const isProfit = currVal - stock.avg * stock.qty >= 0.0;
               const profClass = isProfit ? "text-green-500" : "text-red-500";
