@@ -7,11 +7,15 @@ const cors = require("cors");
 
 const { HoldingModel } = require("./model/HoldingModel");
 const { PositionModel } = require("./model/PositionModel");
+const { OrderModel } = require("./model/OrderModel");
 
 const PORT = process.env.PORT || 3002;
-const URL = process.env.MONGO_URL;
+const URL = process.env.MONGO_URI;
 
 const app = express();
+
+app.use(cors());
+app.use(bodyParser.json());
 
 // app.get("/addHoldings", async (req, res) => {
 //   let tempHoldings = [
@@ -177,15 +181,41 @@ const app = express();
 //   res.send("Position Saved");
 // });
 
-app.get("/allHoldings", async(req, res) => {
+app.get("/allHoldings", async (req, res) => {
   let allHoldings = await HoldingModel.find({});
   res.json(allHoldings);
-})
+});
 
-app.get("/allPosition", async(req, res) => {
+app.get("/allPosition", async (req, res) => {
   let allPosition = await PositionModel.find({});
   res.json(allPosition);
-})
+});
+
+app.get("/allOrders", async (req, res) => {
+  let allOrder = await OrderModel.find({});
+  res.json(allOrder);
+});
+
+app.post("/newOrder", async (req, res) => {
+  let newOrder = new OrderModel({
+    name: req.body.name,
+    qty: req.body.qty,
+    price: req.body.price,
+    mode: req.body.mode,
+  });
+  newOrder.save();
+  res.send("order placed");
+});
+
+app.post("/newHoldings", async (req, res) => {
+  let newHoldings = new HoldingModel({
+    name: req.body.name,
+    qty: req.body.qty,
+    price: req.body.price,
+  });
+  newHoldings.save();
+  res.send("Holdings placed");
+});
 
 app.listen(PORT, () => {
   console.log("App Started");

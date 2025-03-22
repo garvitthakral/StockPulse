@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-import { holdings } from "../../data/data";
+// import { holdings } from "../../data/data";
 import axios from "axios";
 
 const TableH = () => {

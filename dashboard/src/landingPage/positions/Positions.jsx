@@ -1,11 +1,22 @@
-import React from "react";
-import { positions } from "../../data/data";
+import React, { useState, useEffect} from "react";
+// import { positions } from "../../data/data";
+import axios from "axios";
 
 const Positions = () => {
+
+  const [allPosition, setAllPosition] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:3002/allPosition").then((res) => {
+      console.log(res.data);
+      setAllPosition(res.data);
+    })
+  }, []);
+
   return (
     <div className="p-4">
       <h1 className="py-18 text-2xl text-gray-500">
-        Positions ({positions.length})
+        Positions ({allPosition.length})
       </h1>
       <div>
         <table className="w-full border-collapse">
@@ -21,7 +32,7 @@ const Positions = () => {
             </tr>
           </thead>
           <tbody>
-            {positions.map((stock, idx) => {
+            {allPosition.map((stock, idx) => {
               const currVal = stock.price * stock.qty;
               const isProfit = currVal - stock.avg * stock.qty >= 0.0;
               const profClass = isProfit ? "text-green-500" : "text-red-500";

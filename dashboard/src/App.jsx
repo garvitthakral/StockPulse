@@ -6,6 +6,7 @@ import HomeDas from "./landingPage/home/HomeDas";
 import Orders from "./landingPage/order/Orders";
 import Holdings from "./landingPage/holdings/Holdings";
 import Positions from "./landingPage/positions/Positions";
+import { GeneralContextProvider } from "./landingPage/GeneralContext";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         <div className="w-4/12">
           <SidebarDas />
         </div>
+        <GeneralContextProvider>
+          
+        </GeneralContextProvider>
         <div className="w-8/12">
           <Routes>
             <Route path="/" element={<HomeDas />} />
