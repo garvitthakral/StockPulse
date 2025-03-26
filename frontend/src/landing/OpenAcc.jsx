@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../App";
 
 const OpenAcc = () => {
-  return (
+  const {user} = useContext(AuthContext);
+  return user? "" : (
     <div className="flex flex-col items-center justify-center text-center w-full px-50 mt-5">
       <h1 className="text-4xl text-logo-p font-bold py-5">
         Open a StockPulse account
