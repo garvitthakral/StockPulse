@@ -15,18 +15,18 @@ const URL = process.env.MONGO_URI;
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Allow frontend origin
+    credentials: true, // Allow cookies
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allow specific methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allow headers
+  })
+);
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.json());
 app.use("/", authRoute);
-app.use(
-  cors({
-    origin: ["http://localhost:3000"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
 
 // app.get("/addHoldings", async (req, res) => {
 //   let tempHoldings = [

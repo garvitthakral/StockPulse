@@ -17,7 +17,7 @@ module.exports.SignUp = async (req, res, next) => {
     });
     res
       .status(201)
-      .json({ message: "User Signed in Successfully", success: true, user });
+      .json({ message: "User Signed in Successfully", success: true, user, redirect: "/" });
     next();
   } catch (error) {
     console.error(error);
@@ -37,10 +37,9 @@ module.exports.Login = async (req, res, next) => {
     }
     const token = createSecretToken(user._id);
     res.cookie("token", token, {
-      withCredentials: true, 
-      httpOnly: false,
+      httpOnly: true, sameSite: "None", secure: true
     });
-    res.status(201).json({ message: "User Logged in Successfully", success: true })
+    res.status(201).json({ message: "User Logged in Successfully", success: true, redirect: "/" })
     next()
   } catch (error) {
     console.error(error);

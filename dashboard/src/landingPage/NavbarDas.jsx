@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { AuthContext } from "../App";
 
 const NavbarDas = () => {
   const [isProDrDo, setIsProDrDo] = useState(false);
 
   const handleProfile = () => {
     setIsProDrDo(!isProDrDo);
-  }
+  };
+
+  const logout = () => {
+    removeCookie("token");
+    navigate("/signup");
+  };
+
+  const { user } = useContext(AuthContext);
 
   return (
     <div className="flex shadow-2xl">
@@ -80,9 +88,12 @@ const NavbarDas = () => {
           >
             Funds
           </NavLink>
-          <div onClick={handleProfile} className={"flex items-center gap-2 cursor-pointer"}>
-            <AccountCircleIcon/>
-            <h3>DemoUser</h3>
+          <div
+            onClick={handleProfile}
+            className={"flex items-center gap-2 cursor-pointer"}
+          >
+            <AccountCircleIcon />
+            <h3>{user? `${user}` : "demouser"}</h3>
           </div>
         </div>
       </div>

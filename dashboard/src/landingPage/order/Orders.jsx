@@ -6,7 +6,6 @@ const Orders = () => {
 
   useEffect(() => {
     axios.get("http://localhost:3002/allOrders").then((res) => {
-      console.log(res.data);
       setAllOrders(res.data);
     });
   }, []);

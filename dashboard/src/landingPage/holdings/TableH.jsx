@@ -8,7 +8,6 @@ const TableH = () => {
 
   useEffect(() => {
     axios.get("http://localhost:3002/allHoldings").then((res) => {
-      console.log(res.data);
       setAllHolding(res.data);
     })
   }, []);
