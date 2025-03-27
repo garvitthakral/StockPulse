@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import chargesData from "../../../assets/chargesData";
+import chargesData from "../../../public/assets/chargesData";
 
 const Table = () => {
   const [charges, setCharges] = useState([]);
