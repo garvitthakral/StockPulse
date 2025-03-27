@@ -17,7 +17,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://stockpulse-frontend-optb.onrender.com"], // Allow frontend origin
+    origin: ["https://stockpulse-dashboard.onrender.com", "https://stockpulse-frontend-optb.onrender.com"], // Allow frontend origin
     credentials: true, // Allow cookies
     methods: ["GET", "POST", "PUT", "DELETE"], // Allow specific methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allow headers
