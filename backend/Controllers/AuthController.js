@@ -14,6 +14,7 @@ module.exports.SignUp = async (req, res, next) => {
     res.cookie("token", token, {
       withCredentials: true,
       httpOnly: false,
+      domain: ".onrender.com",
     });
     res
       .status(201)
@@ -37,7 +38,7 @@ module.exports.Login = async (req, res, next) => {
     }
     const token = createSecretToken(user._id);
     res.cookie("token", token, {
-      httpOnly: true, sameSite: "None", secure: true
+      httpOnly: true, sameSite: "None", secure: true , domain: ".onrender.com",
     });
     res.status(201).json({ message: "User Logged in Successfully", success: true, redirect: "/" })
     next()
