@@ -117,7 +117,7 @@ const WatchListAction = ({ uid }) => {
   });
 
   const handleBuy = () => {
-    axios.post("http://localhost:3002/newOrder", {
+    axios.post("https://stockpulse-backend-079r.onrender.com/newOrder", {
       name: uid,
       qty: buyDetails.qty,
       price: buyDetails.price,
@@ -128,7 +128,7 @@ const WatchListAction = ({ uid }) => {
     setTimeout(() => setShowConfetti(false), 3000);
   };
   const handleSell = () => {
-    axios.post("http://localhost:3002/newOrder", {
+    axios.post("https://stockpulse-backend-079r.onrender.com/newOrder", {
       name: uid,
       qty: sellDetails.qty,
       price: sellDetails.price,

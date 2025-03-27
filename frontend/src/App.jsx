@@ -29,7 +29,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/userVerification", { withCredentials: true })
+      .get("https://stockpulse-backend-079r.onrender.com/userVerification", { withCredentials: true })
       .then((res) => {
         if (res.data.status) {
           setUser(res.data.user);

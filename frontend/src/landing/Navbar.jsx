@@ -22,7 +22,7 @@ const Navbar = () => {
     e.preventDefault();
     setIsLoggingOut(true);
     try {
-      await fetch("http://localhost:3002/logout", {
+      await fetch("https://stockpulse-backend-079r.onrender.com/logout", {
         method: "POST",
         credentials: "include",
       });

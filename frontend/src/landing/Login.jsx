@@ -34,7 +34,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/login",
+        "https://stockpulse-backend-079r.onrender.com/login",
         {
           ...inputValue,
         },
@@ -44,7 +44,7 @@ const Login = () => {
       const { success, message } = data;
       if (success) {
         const verification = await axios.get(
-          "http://localhost:3002/userVerification",
+          "https://stockpulse-backend-079r.onrender.com/userVerification",
           { withCredentials: true }
         );
 
