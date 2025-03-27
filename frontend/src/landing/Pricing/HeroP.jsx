@@ -11,7 +11,7 @@ const HeroP = () => {
       </div>
       <div className="flex">
         <div className="w-4/12 mx-14 flex flex-col items-center justify-center">
-          <img src="https://drive.google.com/file/d/1812fX3-4KAC3JZS38u4H28dk7YSUhM6v/view?usp=sharing" alt="" />
+          <img src="https://res.cloudinary.com/dtntjxdio/image/upload/v1743102535/pricing0_ttld8f.svg" alt="" />
           <h2 className="text-2xl font-semibold">Free equity delivery</h2>
           <p className="text-lg font-light mt-6">
             All equity delivery investments (NSE, BSE), are absolutely free — ₹
@@ -19,7 +19,7 @@ const HeroP = () => {
           </p>
         </div>
         <div className="w-4/12 mx-14 flex flex-col items-center justify-center">
-          <img src="https://drive.google.com/file/d/1xnyETXOM7R2avHDPlFG5B0yZx5-EJvfV/view?usp=sharing" alt="" />
+          <img src="https://res.cloudinary.com/dtntjxdio/image/upload/v1743102534/pricing20_wkmu4w.svg" alt="" />
           <h2 className="text-2xl font-semibold">Intraday and F&O trades</h2>
           <p className="text-lg font-light mt-6">
             Flat ₹ 20 or 0.03% (whichever is lower) per executed order on
@@ -28,7 +28,7 @@ const HeroP = () => {
           </p>
         </div>
         <div className="w-4/12 mx-14 flex flex-col items-center justify-center">
-          <img src="https://drive.google.com/file/d/1812fX3-4KAC3JZS38u4H28dk7YSUhM6v/view?usp=sharing" alt="" />
+          <img src="https://res.cloudinary.com/dtntjxdio/image/upload/v1743102535/pricing0_ttld8f.svg" alt="" />
           <h2 className="text-2xl font-semibold">Free direct MF</h2>
           <p className="text-lg font-light mt-6">
             All direct mutual fund investments are absolutely free — ₹ 0

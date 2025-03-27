@@ -80,7 +80,7 @@ const Signup = () => {
       </div>
       <div className="flex ">
         <img
-          src="https://drive.google.com/file/d/1gAGWz1Buj6caITI71tpnE-4EeIwvmxxF/view?usp=sharing"
+          src="https://res.cloudinary.com/dtntjxdio/image/upload/v1743102536/account_open_pq9wrs.svg"
           alt=""
           className="w-8/12 p-6"
         />

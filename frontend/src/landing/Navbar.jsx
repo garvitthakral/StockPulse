@@ -50,7 +50,7 @@ const Navbar = () => {
     <div className="flex justify-between items-center border-b border-gray-300 mt-3 px-50 shadow-md">
       <NavLink to={"/"}>
         <img
-          src="https://drive.google.com/file/d/1F3jxST0LGZkG7ZTkG2fEhomS2wED_QfU/view?usp=sharing"
+          src="https://res.cloudinary.com/dtntjxdio/image/upload/v1743102536/inlinelogo_hilqtj.png"
           alt="Logo"
           className="h-24 cursor-pointer"
         />

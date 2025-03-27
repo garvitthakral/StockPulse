@@ -9,7 +9,7 @@ const Founder = () => {
       <div className="flex">
         <div>
           <img
-            src="https://drive.google.com/file/d/1mgGus9mGr9xgp2Qs2FTV5XWWZ6KeylwR/view?usp=sharing"
+            src="https://res.cloudinary.com/dtntjxdio/image/upload/v1743102536/founder_vnrtiz.jpg"
             alt="founder"
             className=" max-w-[75%] rounded-full mx-10"
           />

@@ -13,7 +13,7 @@ const Hero = () => {
           </span>
         </h2>
         <img
-          src="https://drive.google.com/file/d/1gqUu8I7i2I-AxJoDrefr10jtHCCLQwHQ/view?usp=sharing"
+          src="https://res.cloudinary.com/dtntjxdio/image/upload/v1743102537/arrow_yvcxpu.png"
           alt="arrow"
           className="h-52 md:block absolute top-46 right-103"
         />

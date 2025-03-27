@@ -21,7 +21,7 @@ const Pricing = () => {
         </NavLink>
       </div>
       <div className="w-6/12">
-        <img src="https://drive.google.com/file/d/1GGfU2r9BiwFQeBfRx4eln5rWXn7mznuk/view?usp=sharing" alt="" />
+        <img src="https://res.cloudinary.com/dtntjxdio/image/upload/v1743102535/pricing_lasxhv.jpg" alt="" />
       </div>
     </div>
   );

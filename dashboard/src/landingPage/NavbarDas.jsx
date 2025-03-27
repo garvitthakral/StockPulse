@@ -61,7 +61,7 @@ const NavbarDas = () => {
         <div>
           <NavLink to={"/"}>
             <img
-              src="https://drive.google.com/file/d/1gqUu8I7i2I-AxJoDrefr10jtHCCLQwHQ/view?usp=sharing"
+              src="https://res.cloudinary.com/dtntjxdio/image/upload/v1743102537/arrow_yvcxpu.png"
               alt="logo"
               className="h-13"
             />
