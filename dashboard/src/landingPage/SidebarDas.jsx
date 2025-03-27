@@ -9,25 +9,57 @@ import SellIcon from "@mui/icons-material/Sell";
 import ClearIcon from "@mui/icons-material/Clear";
 import axios from "axios";
 import Confetti from "react-confetti";
+import { DoughnoutChart } from "./DoughnoutChart";
 
 const SidebarDas = () => {
-  return (
-    <div className="border-r border-gray-500 h-dvh">
-      <div className="shadow-xl flex justify-between p-4">
-        <input
-          type="text"
-          placeholder="Search eg: infy, bse, nifty, ful, weekly, gold, mcx"
-          className="border-none outline-none"
-        />
-        <p className="text-sm text-gray-600">{watchlist.length}/50</p>
-      </div>
+  const labels = watchlist.map((subArray) => subArray["name"]);
 
-      <ul className="py-4">
-        {watchlist.map((stock, idx) => {
-          return <WatchListItem stock={stock} key={idx} />;
-        })}
-      </ul>
-    </div>
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: "Price",
+        data: watchlist.map((stock) => stock.price),
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.5)",
+          "rgba(54, 162, 235, 0.5)",
+          "rgba(255, 206, 86, 0.5)",
+          "rgba(75, 192, 192, 0.5)",
+          "rgba(153, 102, 255, 0.5)",
+          "rgba(255, 159, 64, 0.5)",
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
+  return (
+    <>
+      <div className="border-r border-gray-500 h-full">
+        <div className="shadow-xl flex justify-between p-4">
+          <input
+            type="text"
+            placeholder="Search eg: infy, bse, nifty, ful, weekly, gold, mcx"
+            className="border-none outline-none"
+          />
+          <p className="text-sm text-gray-600">{watchlist.length}/50</p>
+        </div>
+
+        <ul className="py-4">
+          {watchlist.map((stock, idx) => {
+            return <WatchListItem stock={stock} key={idx} />;
+          })}
+        </ul>
+      <DoughnoutChart data={data}/>
+      </div>
+    </>
   );
 };
 
@@ -45,27 +77,29 @@ const WatchListItem = ({ stock }) => {
   };
 
   return (
-    <li
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className="border-b border-gray-400 hover:bg-gray-50"
-    >
-      <div className="flex justify-between py-2 px-3">
-        <p className={stock.isDown ? "text-red-500" : "text-green-500"}>
-          {stock.name}
-        </p>
-        <div>
-          <span>{stock.percent}</span>
-          {stock.isDown ? (
-            <KeyboardArrowDownIcon className="text-red-500" />
-          ) : (
-            <KeyboardArrowDownIcon className="text-green-500 rotate-180" />
-          )}
-          <span>{stock.price}</span>
+    <>
+      <li
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className="border-b border-gray-400 hover:bg-gray-50"
+      >
+        <div className="flex justify-between py-2 px-3">
+          <p className={stock.isDown ? "text-red-500" : "text-green-500"}>
+            {stock.name}
+          </p>
+          <div>
+            <span>{stock.percent}</span>
+            {stock.isDown ? (
+              <KeyboardArrowDownIcon className="text-red-500" />
+            ) : (
+              <KeyboardArrowDownIcon className="text-green-500 rotate-180" />
+            )}
+            <span>{stock.price}</span>
+          </div>
         </div>
-      </div>
-      {showWatchListAction && <WatchListAction uid={stock.name} />}
-    </li>
+        {showWatchListAction && <WatchListAction uid={stock.name} />}
+      </li>
+    </>
   );
 };
 
