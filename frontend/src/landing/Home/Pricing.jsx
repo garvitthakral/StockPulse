@@ -15,7 +15,7 @@ const Pricing = () => {
         </NavLink>
       </div>
       <div className='w-6/12'>
-        <img src="public\assets\image\pricing.jpeg" alt="" />
+        <img src="\public\assets\image\pricing.jpeg" alt="" />
       </div>
     </div>
   )

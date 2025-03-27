@@ -60,7 +60,7 @@ const NavbarDas = () => {
       <div className="w-8/12 px-4 pr-14 flex items-center justify-between">
         <div>
           <NavLink to={"/"}>
-            <img src="public\assets\image\arrow.png" alt="logo" className="h-13" />
+            <img src="\public\assets\image\arrow.png" alt="logo" className="h-13" />
           </NavLink>
         </div>
         <div className="flex gap-4">

@@ -50,7 +50,7 @@ const Navbar = () => {
     <div className="flex justify-between items-center border-b border-gray-300 mt-3 px-50 shadow-md">
       <NavLink to={"/"}>
         <img
-          src="public\assets\logo\inlinelogo.png"
+          src="\public\assets\logo\inlinelogo.png"
           alt="Logo"
           className="h-24 cursor-pointer"
         />
@@ -75,7 +75,7 @@ const Navbar = () => {
           <>
             <li>
               <NavLink
-                to={"http://localhost:5173/"}
+                to={"https://stockpulse-dashboard.onrender.com"}
                 className={({ isActive }) =>
                   isActive
                     ? "font-bold text-logo-s"
