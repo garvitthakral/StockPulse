@@ -65,13 +65,11 @@ const WatchListItem = ({ stock }) => {
         </div>
       </div>
       {showWatchListAction && <WatchListAction uid={stock.name} />}
-      
     </li>
   );
 };
 
 const WatchListAction = ({ uid }) => {
-  
   const [showConfetti, setShowConfetti] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [showSellPopup, setShowSellPopup] = useState(false);
@@ -89,27 +87,27 @@ const WatchListAction = ({ uid }) => {
       name: uid,
       qty: buyDetails.qty,
       price: buyDetails.price,
-      mode: "BUY"
+      mode: "BUY",
     });
     setShowPopup(false);
     setShowConfetti(true);
     setTimeout(() => setShowConfetti(false), 3000);
-  }
+  };
   const handleSell = () => {
     axios.post("http://localhost:3002/newOrder", {
       name: uid,
       qty: sellDetails.qty,
       price: sellDetails.price,
-      mode: "SELL"
+      mode: "SELL",
     });
     setShowSellPopup(false);
     setShowConfetti(true);
     setTimeout(() => setShowConfetti(false), 8000);
-  }
+  };
 
   return (
     <>
-      {showConfetti && <Confetti/>}
+      {showConfetti && <Confetti />}
       <span>
         <span className="flex gap-2 justify-end pb-3">
           <Tooltip
@@ -118,8 +116,10 @@ const WatchListAction = ({ uid }) => {
             arrow
             TransitionComponent={Grow}
           >
-            <button className="py-1 px-3 bg-green-500 text-white rounded-sm"
-            onClick={() => setShowPopup(true)}>
+            <button
+              className="py-1 px-3 bg-green-500 text-white rounded-sm"
+              onClick={() => setShowPopup(true)}
+            >
               <ShoppingCartIcon />
             </button>
           </Tooltip>
@@ -129,8 +129,10 @@ const WatchListAction = ({ uid }) => {
             arrow
             TransitionComponent={Grow}
           >
-            <button className="py-1 px-3 bg-red-500 text-white rounded-sm" 
-            onClick={() => setShowSellPopup(true)}>
+            <button
+              className="py-1 px-3 bg-red-500 text-white rounded-sm"
+              onClick={() => setShowSellPopup(true)}
+            >
               <SellIcon />
             </button>
           </Tooltip>

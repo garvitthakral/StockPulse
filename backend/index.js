@@ -228,6 +228,15 @@ app.post("/newHoldings", async (req, res) => {
   res.send("Holdings placed");
 });
 
+app.post("/logout", (req, res) => {
+  res.clearCookie("token", {
+    path: "/",
+    secure: process.env.NODE_ENV === "production",
+    httpOnly: true,
+  });
+  res.status(200).json({ message: "Logged out" });
+});
+
 app.listen(PORT, () => {
   console.log("App Started");
   mongoose.connect(URL);

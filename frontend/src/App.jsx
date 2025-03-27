@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes, useLocation, useNavigate, Navigate } from "react-router-dom";
+import {
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+  Navigate,
+} from "react-router-dom";
 import axios from "axios";
 
 import Home from "./landing/Home/Home";
@@ -11,6 +17,7 @@ import Pricing from "./landing/Pricing/Pricing";
 import Support from "./landing/Support/Support";
 import Signup from "./landing/Signup";
 import Login from "./landing/Login";
+import { CookiesProvider } from "react-cookie";
 
 export const AuthContext = React.createContext();
 
@@ -26,8 +33,11 @@ function App() {
       .then((res) => {
         if (res.data.status) {
           setUser(res.data.user);
-          if (location.pathname === '/login' || location.pathname === '/signup') {
-            navigate('/');
+          if (
+            location.pathname === "/login" ||
+            location.pathname === "/signup"
+          ) {
+            navigate("/");
           }
         } else {
           setUser(null);
@@ -35,7 +45,7 @@ function App() {
       })
       .catch(() => {
         console.error("Error verifying user:", error);
-      setUser(null);
+        setUser(null);
       })
       .finally(() => {
         setLoading(false);
@@ -45,18 +55,20 @@ function App() {
   if (loading) return <p>Loading...</p>;
   return (
     <>
-    <AuthContext.Provider value={{ user }}>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/support" element={<Support />} />
-        <Route path="/signin" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-      <Footer />
+      <AuthContext.Provider value={{ user, setUser }}>
+        <CookiesProvider>
+          <Navbar />
+        </CookiesProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/signin" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+        <Footer />
       </AuthContext.Provider>
     </>
   );

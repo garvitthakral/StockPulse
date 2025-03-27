@@ -44,18 +44,18 @@ const Login = () => {
       const { success, message } = data;
       if (success) {
         const verification = await axios.get(
-          'http://localhost:3002/userVerification',
+          "http://localhost:3002/userVerification",
           { withCredentials: true }
         );
-        
+
         if (verification.data.status) {
-          navigate(response.data.redirect || '/');
+          navigate("/");
           handleSuccess(message);
         }
       }
     } catch (error) {
       handleError(error);
-      console.log('Login failed:', error);
+      console.log("Login failed:", error);
     }
     setInputValue({
       ...inputValue,
