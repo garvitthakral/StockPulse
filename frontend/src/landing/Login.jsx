@@ -75,7 +75,7 @@ const Login = () => {
         </h3>
       </div>
       <div className="flex ">
-        <img src="\src\data\account_open.svg" alt="" className="w-8/12 p-6" />
+        <img src="\public\data\account_open.svg" alt="" className="w-8/12 p-6" />
         <div className="w-4/12 p-4 shadow-lg rounded-4xl">
           <form onSubmit={handleSubmit}>
             <h1 className="text-4xl font-semibold text-logo-s pt-6 pb-2">

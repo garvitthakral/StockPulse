@@ -9,7 +9,7 @@ const Founder = () => {
       <div className="flex">
         <div>
           <img
-            src="assets\image\founder.jpg"
+            src="public\assets\image\founder.jpg"
             alt="founder"
             className=" max-w-[75%] rounded-full mx-10"
           />

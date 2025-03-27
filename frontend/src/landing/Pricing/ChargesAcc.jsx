@@ -19,7 +19,7 @@ const ChargesAcc = () => {
               <td>Online account</td>
               <td>
                 <img
-                  src="assets\svgs\free-bedge.svg"
+                  src="public\assets\svgs\free-bedge.svg"
                   alt="Free"
                   className="h-12"
                 />
@@ -29,7 +29,7 @@ const ChargesAcc = () => {
               <td>Offline account</td>
               <td>
                 <img
-                  src="assets\svgs\free-bedge.svg"
+                  src="public\assets\svgs\free-bedge.svg"
                   alt="Free"
                   className="h-12"
                 />
