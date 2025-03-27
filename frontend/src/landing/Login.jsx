@@ -34,7 +34,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://stockpulse-backend-079r.onrender.com/login",
+        "https://stockpulse-tewo.onrender.com/login",
         {
           ...inputValue,
         },
@@ -44,7 +44,7 @@ const Login = () => {
       const { success, message } = data;
       if (success) {
         const verification = await axios.get(
-          "https://stockpulse-backend-079r.onrender.com/userVerification",
+          "https://stockpulse-tewo.onrender.com/userVerification",
           { withCredentials: true }
         );
 
@@ -75,7 +75,11 @@ const Login = () => {
         </h3>
       </div>
       <div className="flex ">
-        <img src="\public\data\account_open.svg" alt="" className="w-8/12 p-6" />
+        <img
+          src="https://drive.google.com/file/d/1gAGWz1Buj6caITI71tpnE-4EeIwvmxxF/view?usp=sharing"
+          alt=""
+          className="w-8/12 p-6"
+        />
         <div className="w-4/12 p-4 shadow-lg rounded-4xl">
           <form onSubmit={handleSubmit}>
             <h1 className="text-4xl font-semibold text-logo-s pt-6 pb-2">

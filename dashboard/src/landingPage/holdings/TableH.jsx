@@ -8,7 +8,7 @@ const TableH = () => {
   const [allHolding, setAllHolding] = useState([]);
 
   useEffect(() => {
-    axios.get("https://stockpulse-backend-079r.onrender.com/allHoldings").then((res) => {
+    axios.get("https://stockpulse-tewo.onrender.com/allHoldings").then((res) => {
       setAllHolding(res.data);
     })
   }, []);

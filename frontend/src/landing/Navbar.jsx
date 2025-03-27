@@ -22,7 +22,7 @@ const Navbar = () => {
     e.preventDefault();
     setIsLoggingOut(true);
     try {
-      await fetch("https://stockpulse-backend-079r.onrender.com/logout", {
+      await fetch("https://stockpulse-tewo.onrender.com/logout", {
         method: "POST",
         credentials: "include",
       });
@@ -50,7 +50,7 @@ const Navbar = () => {
     <div className="flex justify-between items-center border-b border-gray-300 mt-3 px-50 shadow-md">
       <NavLink to={"/"}>
         <img
-          src="/public/assets/logo/inlinelogo.png"
+          src="https://drive.google.com/file/d/1F3jxST0LGZkG7ZTkG2fEhomS2wED_QfU/view?usp=sharing"
           alt="Logo"
           className="h-24 cursor-pointer"
         />

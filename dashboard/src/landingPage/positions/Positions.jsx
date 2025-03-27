@@ -1,15 +1,16 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 // import { positions } from "../../data/data";
 import axios from "axios";
 
 const Positions = () => {
-
   const [allPosition, setAllPosition] = useState([]);
 
   useEffect(() => {
-    axios.get("https://stockpulse-backend-079r.onrender.com/allPosition").then((res) => {
-      setAllPosition(res.data);
-    })
+    axios
+      .get("https://stockpulse-tewo.onrender.com/allPosition")
+      .then((res) => {
+        setAllPosition(res.data);
+      });
   }, []);
 
   return (

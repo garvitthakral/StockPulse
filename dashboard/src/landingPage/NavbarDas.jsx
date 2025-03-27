@@ -20,7 +20,7 @@ const NavbarDas = () => {
     e.preventDefault();
     setIsLoggingOut(true);
     try {
-      await fetch("https://stockpulse-backend-079r.onrender.com/logout", {
+      await fetch("https://stockpulse-tewo.onrender.com/logout", {
         method: "POST",
         credentials: "include",
       });
@@ -60,7 +60,11 @@ const NavbarDas = () => {
       <div className="w-8/12 px-4 pr-14 flex items-center justify-between">
         <div>
           <NavLink to={"/"}>
-            <img src="/public/assets/image/arrow.png" alt="logo" className="h-13" />
+            <img
+              src="https://drive.google.com/file/d/1gqUu8I7i2I-AxJoDrefr10jtHCCLQwHQ/view?usp=sharing"
+              alt="logo"
+              className="h-13"
+            />
           </NavLink>
         </div>
         <div className="flex gap-4">

@@ -17,10 +17,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://stockpulse-dashboard.onrender.com", "https://stockpulse-frontend-optb.onrender.com"], // Allow frontend origin
-    credentials: true, // Allow cookies
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allow specific methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allow headers
+    origin: ["https://stockpulse-dashboard.onrender.com", "https://stockpulse-frontend-x8d6.onrender.com"],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 app.use(bodyParser.json());

@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="flex px-50 mt-5">
           <div className="w-3/12">
             <img
-              src="/public/assets/logo/inlinelogo.png"
+              src="https://drive.google.com/file/d/1F3jxST0LGZkG7ZTkG2fEhomS2wED_QfU/view?usp=sharing"
               alt="logo"
               className="h-22"
             />

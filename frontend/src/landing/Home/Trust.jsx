@@ -51,12 +51,12 @@ const Trust = () => {
 
         {/* right */}
         <div className="w-6/12">
-          <img src="/public/assets/image/ecosystem.png" alt="" />
+          <img src="https://drive.google.com/file/d/1PMW71k7C2uLXeWE_elPhGOa6q1EbPFbZ/view?usp=sharing" alt="" />
         </div>
       </div>
       <div className="flex justify-center items-center px-0">
         <img
-          src="/public/assets/image/pressLogos.png"
+          src="https://drive.google.com/file/d/1MD5VvxJsnAQ0XUDKxwQc4KChocCcLBVZ/view?usp=sharing"
           alt="companies"
           className="py-5"
         />
