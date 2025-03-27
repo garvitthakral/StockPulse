@@ -6,18 +6,12 @@ const Hero = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center text-center h-125">
-        <h2 className="text-5xl">
-          <span className="text-logo-s">Track. Analyze. Trade.</span> <br />{" "}
-          <span className="text-logo-p">
-            Welcome to the future of stock investing!
-          </span>
-        </h2>
         <img
-          src="https://res.cloudinary.com/dtntjxdio/image/upload/v1743102537/arrow_yvcxpu.png"
+          src="https://res.cloudinary.com/dtntjxdio/image/upload/v1743108708/hero2_c3f9vq.png"
           alt="arrow"
-          className="h-52 md:block absolute top-46 right-103"
+          className=""
         />
-        <div className="flex justify-center text-center w-full text-lg mt-10 gap-5 ">
+        <div className="flex justify-center text-center w-full text-lg  gap-5 ">
           <NavLink
             to={"/signin"}
             className="px-5 py-2 bg-logo-s text-white rounded-xl shadow-xl cursor-pointer"
